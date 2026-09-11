@@ -1,0 +1,36 @@
+[gd_project]
+
+config_version=5
+
+_global_script_classes=[{
+"base": "CharacterBody2D",
+"class": &"Player",
+"language": &"GDScript",
+"path": "res://Player.gd"
+}, {
+"base": "CharacterBody2D",
+"class": &"Enemy",
+"language": &"GDScript",
+"path": "res://Enemy.gd"
+}, {
+"base": "Node",
+"class": &"GameManager",
+"language": &"GDScript",
+"path": "res://GameManager.gd"
+}]
+
+_global_script_class_icons={
+"Enemy": "",
+"GameManager": "",
+"Player": ""
+}
+
+[application]
+
+config/name="Jujutsu Kaisen Fighting Game"
+config/version="1.0"
+run/main_scene="res://Main.tscn"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
