@@ -1,0 +1,92 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8w8kucnq5p3d"]
+
+[ext_resource type="Script" path="res://GameManager.gd" id="1_khbup"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_khbup")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.8, 0.8)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -500.0
+offset_top = -400.0
+offset_right = 500.0
+offset_bottom = 400.0
+color = Color.DARK_SLATE_GRAY
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(0, 300)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+shape = RectangleShape2D.new()
+
+[node name="ColorRect" type="ColorRect" parent="Ground"]
+offset_left = -500.0
+offset_top = -20.0
+offset_right = 500.0
+offset_bottom = 20.0
+color = Color.BROWN
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(-150, 0)
+script = load("res://Player.gd")
+groups = ["player"]
+
+[node name="ColorRect" type="ColorRect" parent="Player"]
+offset_left = -25.0
+offset_top = -40.0
+offset_right = 25.0
+offset_bottom = 40.0
+color = Color.BLUE
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = RectangleShape2D.new()
+
+[node name="Enemy" type="CharacterBody2D" parent="."]
+position = Vector2(150, 0)
+script = load("res://Enemy.gd")
+groups = ["enemy"]
+
+[node name="ColorRect" type="ColorRect" parent="Enemy"]
+offset_left = -25.0
+offset_top = -40.0
+offset_right = 25.0
+offset_bottom = 40.0
+color = Color.RED
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
+shape = RectangleShape2D.new()
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PlayerHealthLabel" type="Label" parent="CanvasLayer"]
+offset_left = -480.0
+offset_top = -380.0
+offset_right = -280.0
+offset_bottom = -350.0
+text = "Player HP: 100/100"
+
+[node name="EnemyHealthLabel" type="Label" parent="CanvasLayer"]
+offset_left = 280.0
+offset_top = -380.0
+offset_right = 480.0
+offset_bottom = -350.0
+text = "Enemy HP: 80/80"
+
+[node name="ComboLabel" type="Label" parent="CanvasLayer"]
+offset_left = -100.0
+offset_top = -380.0
+offset_right = 100.0
+offset_bottom = -350.0
+text = "Combo: 0"
+alignment = 1
+
+[node name="GameOverLabel" type="Label" parent="CanvasLayer"]
+offset_left = -200.0
+offset_top = -100.0
+offset_right = 200.0
+offset_bottom = -50.0
+text = "GAME OVER!"
+alignment = 1
+visible = false
