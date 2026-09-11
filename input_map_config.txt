@@ -1,0 +1,6 @@
+# input map
+ui_accept={"deadzone": 0.5, "events": [Object(InputEventKey, "key_code": 4194309), Object(InputEventKey, "key_code": 90)]}
+ui_select={"deadzone": 0.5, "events": [Object(InputEventKey, "key_code": 4194310), Object(InputEventKey, "key_code": 88)]}
+dash={"deadzone": 0.5, "events": [Object(InputEventKey, "key_code": 67)]}
+special_ability={"deadzone": 0.5, "events": [Object(InputEventKey, "key_code": 86)]}
+ultimate={"deadzone": 0.5, "events": [Object(InputEventKey, "key_code": 66)]}

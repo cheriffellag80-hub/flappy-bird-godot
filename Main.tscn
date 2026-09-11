@@ -38,25 +38,42 @@ offset_left = -25.0
 offset_top = -40.0
 offset_right = 25.0
 offset_bottom = 40.0
-color = Color.BLUE
+color = Color.CYAN
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = RectangleShape2D.new()
+
+[node name="Label" type="Label" parent="Player"]
+offset_left = -40.0
+offset_top = -50.0
+offset_right = 40.0
+offset_bottom = -30.0
+text = "GOJO"
+alignment = 1
 
 [node name="Enemy" type="CharacterBody2D" parent="."]
 position = Vector2(150, 0)
 script = load("res://Enemy.gd")
 groups = ["enemy"]
+character_type = 2
 
 [node name="ColorRect" type="ColorRect" parent="Enemy"]
 offset_left = -25.0
 offset_top = -40.0
 offset_right = 25.0
 offset_bottom = 40.0
-color = Color.RED
+color = Color.DARK_RED
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
 shape = RectangleShape2D.new()
+
+[node name="Label" type="Label" parent="Enemy"]
+offset_left = -40.0
+offset_top = -50.0
+offset_right = 40.0
+offset_bottom = -30.0
+text = "SUKUNA"
+alignment = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -65,14 +82,15 @@ offset_left = -480.0
 offset_top = -380.0
 offset_right = -280.0
 offset_bottom = -350.0
-text = "Player HP: 100/100"
+text = "GOJO HP: 120/120"
 
 [node name="EnemyHealthLabel" type="Label" parent="CanvasLayer"]
 offset_left = 280.0
 offset_top = -380.0
 offset_right = 480.0
 offset_bottom = -350.0
-text = "Enemy HP: 80/80"
+text = "SUKUNA HP: 130/130"
+alignment = 2
 
 [node name="ComboLabel" type="Label" parent="CanvasLayer"]
 offset_left = -100.0
@@ -80,6 +98,29 @@ offset_top = -380.0
 offset_right = 100.0
 offset_bottom = -350.0
 text = "Combo: 0"
+alignment = 1
+
+[node name="PlayerCooldownLabel" type="Label" parent="CanvasLayer"]
+offset_left = -480.0
+offset_top = -340.0
+offset_right = -280.0
+offset_bottom = -310.0
+text = "Ready!"
+
+[node name="EnemyCooldownLabel" type="Label" parent="CanvasLayer"]
+offset_left = 280.0
+offset_top = -340.0
+offset_right = 480.0
+offset_bottom = -310.0
+text = "Ready!"
+alignment = 2
+
+[node name="InstructionsLabel" type="Label" parent="CanvasLayer"]
+offset_left = -300.0
+offset_top = 340.0
+offset_right = 300.0
+offset_bottom = 370.0
+text = "Z: Punch | X: Kick | C: Dash | V: Special | B: Ultimate"
 alignment = 1
 
 [node name="GameOverLabel" type="Label" parent="CanvasLayer"]
@@ -90,3 +131,4 @@ offset_bottom = -50.0
 text = "GAME OVER!"
 alignment = 1
 visible = false
+modulate = Color.RED
